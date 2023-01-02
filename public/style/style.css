@@ -1,0 +1,328 @@
+
+   :root {
+    --bg: black;
+    --txt: white;
+    --outline: white;
+    --font: 'video';
+    --maintxt: #d4ff00;
+    --other:   white;
+    /*#C4FF7F #384964 #7fb2ff*/
+  }
+
+@font-face {
+  font-family: video;
+  src: url(videotype.ttf);
+}
+
+body {
+  background-color: var(--bg);
+  background-image: url('backg.webp');
+	background-position: top;
+  background-repeat: repeat-x;
+  background-attachment: fixed;
+  background-size: cover;
+  font-size: 18px;
+  font-family: var(--font);
+  margin: 0;
+  /* cursor: url('cursor.png'),auto !important;*/
+  overflow-x: hidden;
+}
+
+
+@keyframes bgScroll {
+  0% {
+    background-position : 0px 0px
+  }
+  100% {
+    background-position : 1920px 0px
+  }
+}
+
+.safbody {
+  display:block;
+  width:100vw;
+  height:100vh;
+  animation: bgScroll 20s linear infinite;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 1px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: var(--bg); 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--other); 
+}
+
+
+p {
+  line-height: 1.6em; /*I find the default HTML line-height tends to be a bit claustrophobic for main text*/
+}
+
+hr {
+  border: solid var(--outline);
+  border-width: 1px 0 0 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+.right {
+  float: right;
+  margin-left: 1em;
+}
+.left {
+  float: left;
+  margin-right: 1em;
+}
+.center {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+}
+@media only screen and (min-width: 600px) {
+  .small {
+    max-width: 60%;
+    height: auto;
+  }
+}
+.caption {
+  margin-top: 0;
+  font-size: 0.9em;
+  font-style: italic;
+}
+
+a:hover { 
+  background-color: var(--txt);
+  /* cursor: url('hand.png'),auto !important; */
+}
+a img:hover {
+  background-color: none;
+}
+img a:hover {
+  background-color: none;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: var(--font);
+  color: var(--txt);
+}
+h1 {
+  color: var(--maintxt);
+}
+
+/*#CONTAINER is the rectangle that contains everything but the background!*/
+#container {
+  margin: 3em auto;
+  width: 90%;
+	max-width: 70%;
+	background-color: var(--bg);
+  color: var(--txt); 
+  outline-color: var(--outline);
+  outline-style: solid;
+  outline-width: 1px;
+  outline-offset: 0;
+  margin-top: 0px;
+  box-shadow: 0 3px 30px 10px black;
+}
+
+#content {
+  padding: 10px 5% 20px 5%;
+}
+
+
+/*HEADER STYLE*/
+#header {
+  background-color: var(--bg);
+  padding: 0 5%;
+  border-color: var(--outline);
+  border-style: solid;
+  border-width: 0 0 1px 0;
+
+  background-color: #000;
+  background-image: radial-gradient(var(--maintxt) 10%, transparent 11%), radial-gradient(var(--maintxt) 10%, transparent 11%);
+  background-size: 5px 5px;
+  background-position: 0 0, 5px 5px;
+  background-repeat: repeat;
+  
+}
+
+#header ul {
+  list-style-type: none;
+  padding: 0.5em 0;
+  margin: 0;
+}
+#header li {
+  font-size: 1.2em;
+  display: inline-block;
+  margin-right: 1.5em;
+  margin-bottom: 0.2em;
+  margin-top: 0.2em;
+}
+#header li a {
+  color: var(--txt);
+  text-decoration: none;
+  background-color: inherit;
+}
+#header li a:hover {
+  text-decoration: underline;
+}
+
+/*POST LIST STYLE*/
+#postlistdiv ul {
+  font-size: 1.2em;
+  padding: 0;
+  list-style-type: none;
+}
+#recentpostlistdiv ul {
+  font-size: 1.2em;
+  padding: 0;
+  list-style-type: none;
+}
+.moreposts {
+  font-size: 0.8em;
+  margin-top: 0.2em;
+}
+
+/*NEXT AND PREVIOUS LINKS STYLE*/
+#nextprev {
+  text-align: center;
+  margin-top: 1.4em;
+}
+
+/*DISQUS STYLE*/
+#disqus_thread {
+  margin-top: 1.6em;
+}
+
+/*FOOTER STYLE*/
+#footer {
+  font-size: 0.8em;
+  padding: 0 5% 10px 5%;
+  text-align: center;
+}
+
+/*POST LIST STYLE*/
+#featuredposts ul {
+  font-size: 1.2em;
+  padding: 0;
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: var(--maintxt);
+}
+
+.zoom {
+  width: 50%;
+  transition: width .2s;
+}
+
+.zoom:hover {
+ width: 100%;
+}
+
+/*-------------------------------------------*/
+details {
+  user-select: none;
+  margin-bottom: 15px;
+}
+details summary span.icon {
+  transform: rotate(0deg);
+}
+
+details>summary span.icon {
+  width: 24px;
+  height: 24px;
+  transition: all 0.3s;
+  margin-left: auto;
+}
+
+details[open] summary span.icon {
+  transform: rotate(90deg);
+}
+
+summary {
+  display: flex;
+  cursor: pointer;
+  color: var(--maintxt);
+  font-size: 26px;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+/*---------------------*/
+#headimg {
+  width: 100%;
+  margin: 10px 0 10px 0;
+}
+
+#headimg h1 {
+ text-align: center; 
+  font-size: 5em;
+  margin: 0;
+    text-shadow: 0 0px 10px black;
+}
+
+/*-------------------drag------------------------------*/
+
+#drag {
+  position: absolute;
+  right: 7%;
+  top: 50%;
+  background-color: black;
+  border: 1px solid white;
+  text-align: center;
+  width: 20%;
+  box-shadow: 0 3px 30px 10px black;
+}
+
+#dragheader {
+  padding: 10px;
+  cursor: move;
+  z-index: 10;
+  background-color: black;
+  color: #fff;
+}
+
+#drag img {
+  width: 100%;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+/*----input----*/
+
+#contactform textarea, input {
+margin-top: 10px;
+margin-bottom: 10px;
+color: black;
+}
+
+
+
+
+td{
+  border:1px solid white;
+  padding: 10px;
+}
+td {
+width: 30px;
+height: 30px;
+}
+
+span {
+  color: var(--maintxt);
+}

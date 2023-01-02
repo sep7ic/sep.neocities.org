@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Blog Post</title>
+    <link rel="icon" href="../images/favicon.png" type="image/x-icon"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8"> 
+    <link href="../style/style.css" rel="stylesheet" type="text/css" media="all">    
+  </head>
+<style>
+
+
+.rangeslider {
+  width: 400px;
+  margin: 0 auto;
+}
+
+.myslider {
+  -webkit-appearance: none;
+  background: #FCF3CF;
+  width: 100%;
+  height: 20px;
+  opacity: 0.8;
+  margin-top: 500px;
+}
+
+.myslider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  cursor: pointer;
+  background: #34495E;
+  width: 10%;
+  height: 20px;
+}
+
+.myslider:hover {
+  opacity: 1;
+}
+
+.image {
+  position: relative;
+  width: 400px;
+  margin: 0 auto;
+}
+
+.image>img {
+  position: absolute;
+  display: none;
+}
+
+.image>img.visible,
+.image>img:first-child {
+  display: block;
+}
+
+.sliderOutput>div {
+  margin: 5px;
+  width: 120px;
+  display: inline-block;
+  vertical-align: top;
+  text-align: center;
+}
+
+.sliderOutput h6,
+.sliderOutput p {
+  margin: 5px;
+}
+
+</style>
+
+  <body>
+    <div id="container">
+    <div id="header">...</div>
+    <div id="content">
+      <h1 id="postTitleH1"></h1>
+      <h4 id="postDate"></h4>
+      
+      <div class="image mt-3 mb-3" id="sliderImages">
+        <p>Roman Republic<img src="../images/worldmap/roman empire/510 bc.png"></p>
+        <img src="../images/worldmap/roman empire/320 bc.png">
+        <img src="../images/worldmap/roman empire/300 bc.png">
+        <img src="../images/worldmap/roman empire/270 bc.png">
+        <img src="../images/worldmap/roman empire/220 bc.png">
+        <img src="../images/worldmap/roman empire/190 bc.png">
+        <img src="../images/worldmap/roman empire/146 bc.png">
+        <img src="../images/worldmap/roman empire/70 bc.png">
+        <img src="../images/worldmap/roman empire/49 bc.png">
+        <img src="../images/worldmap/roman empire/44 bc.png">
+        <img src="../images/worldmap/roman empire/40 bc.png">
+        <img src="../images/worldmap/roman empire/14 ad.png">
+        <img src="../images/worldmap/roman empire/70 ad.png">
+        <img src="../images/worldmap/roman empire/117 ad.png">
+        <img src="../images/worldmap/roman empire/180 ad.png">
+        <img src="../images/worldmap/roman empire/230 ad.png">
+        <img src="../images/worldmap/roman empire/260-274 ad.png">
+        <img src="../images/worldmap/roman empire/300 ad.png">
+        <img src="../images/worldmap/roman empire/360 ad.png">
+        <img src="../images/worldmap/roman empire/395 ad.png">
+        <img src="../images/worldmap/roman empire/420 ad.png">
+        <img src="../images/worldmap/roman empire/450 ad.png">
+        <img src="../images/worldmap/roman empire/476 ad.png">
+
+      </div><br>
+      <div class="rangeslider">
+        <input type="range" min="1" max="23" value="1" class="myslider" id="sliderRange">
+        </p>
+      </div>
+      
+      
+      
+    <div id="nextprev"></div>
+    </div> <!-- end of div id="content" -->
+    <div id="footer"></div>
+    </div> <!-- end of div id="container" -->
+  <!-- Here's the link to our JavaScript! -->
+  <script src="../script.js"></script>
+  </body>
+
+  <script>
+    window.addEventListener('load', function() {
+
+var rangeslider = document.getElementById("sliderRange");
+
+var images = document.getElementById("sliderImages");
+
+rangeslider.addEventListener('input', function() {
+  for (var i = 0; i < images.children.length; i++) {
+    images.children[i].style.display = 'none';
+  }
+  i = Number(this.value) - 1;
+  images.children[i].style.display = 'block';
+});
+
+});
+</script>
+
+</html>
