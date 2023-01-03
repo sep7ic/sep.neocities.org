@@ -185,7 +185,6 @@ h1 {
 
 /*POST LIST STYLE*/
 #postlistdiv ul {
-  font-size: 1.2em;
   padding: 0;
   list-style-type: none;
 }
@@ -320,7 +319,7 @@ color: black;
 
 
 td{
-  border:1px solid white;
+  border:1px solid var(--outline);
   padding: 10px;
 }
 td {
@@ -330,4 +329,8 @@ height: 30px;
 
 span {
   color: var(--maintxt);
+}
+
+.spwht {
+  color: var(--txt);
 }
