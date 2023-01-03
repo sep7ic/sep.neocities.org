@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ART</title>
+    <meta name="author" content="Marina Kittaka">
+    <meta name="description" content="The full list of posts on the Zonelets blog!">
+    <link rel="icon" href="./images/favicon.png" type="image/x-icon"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8"> 
+    <link href="./style/style.css" rel="stylesheet" type="text/css" media="all">    
+  </head>
+  <style>
+    img {
+      width: 10vh;
+      z-index:999; 
+      cursor: pointer; 
+      -webkit-transition-property: all; 
+      -webkit-transition-duration: 0.3s; 
+      -webkit-transition-timing-function: ease; 
+    }
+
+img:hover { 
+transform: scale(5); 
+
+}
+  </style>
+  <body>
+    <div id="headimg"></div>
+    <div id="container">
+    <div id="header">...</div>
+    <div id="content">    
+    <h1>ART</h1>    
+    <p>just like the title says, this page will contain art. and other creations probably.</p>
+    <hr>
+    <p>CONTENT WARNING. THIS WILL CONTAIN GOREY IMAEGS SO VIEW AT YOUR OWN EXPENSE OR WHATEVER I DONT CARE.</p>
+    <hr>
+    <details id="art">
+      <summary>art<span class="icon">▶</span></summary>
+    </details>
+    
+    <div id="footer"></div>
+    </div> 
+
+  <script src="./script.js"></script>
+
+<script>
+      var xhr = new XMLHttpRequest();
+    xhr.open("GET", "art/", true);
+    xhr.responseType = 'document';
+    xhr.onload = () => {
+      if (xhr.status === 200) {
+        var elements = xhr.response.getElementsByTagName("a");
+        for (x of elements) {
+          if ( x.href.match(/\.(jpe?g|png|gif)$/) ) { 
+              let img = document.createElement("img");
+              img.src = x.href;
+              document.getElementById("art").appendChild(img);
+          } 
+        };
+      } 
+      else {
+        alert('Request failed. Returned status of ' + xhr.status);
+      }
+    }
+    xhr.send()
+</script>
+
+  </body>
+</html>

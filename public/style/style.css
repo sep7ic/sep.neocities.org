@@ -135,6 +135,11 @@ h1 {
   margin-top: 0px;
   box-shadow: 0 3px 30px 10px black;
 }
+@media screen and (max-width: 800px) {
+  #container {   
+    max-width: 99%;
+  }
+}
 
 #content {
   padding: 10px 5% 20px 5%;
