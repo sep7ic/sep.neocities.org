@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8"> 
     <link href="./style/style.css" rel="stylesheet" type="text/css" media="all">    
+    <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
   </head>
   <style>
     img {
@@ -36,25 +37,28 @@ transform: scale(5);
     <hr>
     <details id="art">
       <summary>art<span class="icon">▶</span></summary>
-      <img src="art/antarctica.png" alt="">
-      <img src="art/baphomet.png" alt="">
-      <img src="art/canada.png" alt="">
-      <img src="art/cum.png" alt="">
-      <img src="art/FUCK THIS I HATE THIS RHAHHHHh.png" alt="">
-      <img src="art/heywgar.png" alt="">
-      <img src="art/serbia.png" alt="">
-      <img src="art/stack.png" alt="">
-      <img src="art/what.png" alt="">
-      <img src="art/wowe.png" alt="">
-      <img src="art/yay.png" alt="">
-      <img src="" alt="">
-      <img src="" alt="">
+<img src="" alt="">
     </details>
     
     <div id="footer"></div>
     </div> 
 
   <script src="./script.js"></script>
+
+  <script>
+var folder = "images/art";
+
+$.ajax({
+    url : folder,
+    success: function (data) {
+        $(data).find("a").attr("href", function (i, val) {
+            if( val.match(/\.(jpe?g|png|gif)$/) ) { 
+                $("details").append( "<img src='"+ folder + val +"'>" );
+            } 
+        });
+    }
+});
+  </script>
 
   </body>
 </html>
