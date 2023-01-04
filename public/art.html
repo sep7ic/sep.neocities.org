@@ -33,7 +33,7 @@ transform: scale(5);
     <h1>ART</h1>    
     <p>just like the title says, this page will contain art. and other creations probably.</p>
     <hr>
-    <p>CONTENT WARNING. THIS WILL CONTAIN GOREY IMAEGS SO VIEW AT YOUR OWN EXPENSE OR WHATEVER I DONT CARE.</p>
+    <p>CONTENT WARNING. THIS WILL CONTESTTAIN GOREY IMAEGS SO VIEW AT YOUR OWN EXPENSE OR WHATEVER I DONT CARE.</p>
     <hr>
     <details id="art">
       <summary>art<span class="icon">▶</span></summary>
@@ -47,7 +47,8 @@ transform: scale(5);
   <script>
 var folder = "images/art/";
 
-$.ajax({
+$(document).ready(function(e) {   
+  $.ajax({
     url : folder,
     success: function (data) {
         $(data).find("a").attr("href", function (i, val) {
@@ -57,6 +58,8 @@ $.ajax({
         });
     }
 }); 
+ });
+
   </script>
 
   </body>
