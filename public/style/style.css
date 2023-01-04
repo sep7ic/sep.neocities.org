@@ -139,6 +139,9 @@ h1 {
   #container {   
     max-width: 99%;
   }
+  .leftcolumn, .rightcolumn {   
+    width: 100%;
+  }
 }
 
 #content {
