@@ -69,6 +69,9 @@ if ( url.includes("stamps/") ) {
 if ( url.includes("more/") ) {
   relativePath = "..";
 }
+if ( url.includes("posts/")) or ( url.includes("more/") ); {
+  relativePath = "..";
+}
 
 //Write the Header HTML, a series of list items containing links.
 let headerHTML = '<ul> <li><a href="' + relativePath + '/index.html">home</a></li>' + 
