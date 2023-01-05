@@ -58,7 +58,7 @@ let relativePath = ".";
 if ( url.includes("posts/") ) {
   relativePath = "..";
 }
-if ( url.includes("FOTW/") ) {
+if ( url.includes("FOTD/") ) {
   relativePath = "..";
 }
 if ( url.includes("DTTAH/") ) {
