@@ -62,7 +62,7 @@ body {
 
 
 p {
-  line-height: 1.6em; /*I find the default HTML line-height tends to be a bit claustrophobic for main text*/
+  line-height: 1.6em;
 }
 
 hr {
@@ -75,6 +75,13 @@ img {
   height: auto;
   margin-top: 0.5em;
   margin-bottom: 0.5em;
+}
+img {
+  transition: transform ease 300ms;
+}
+
+img:hover {
+  transform: translate(0, -10px);
 }
 .right {
   float: right;
@@ -104,13 +111,9 @@ img {
 
 a:hover { 
   background-color: var(--txt);
-  /* cursor: url('hand.png'),auto !important; */
 }
-a img:hover {
-  background-color: none;
-}
-img a:hover {
-  background-color: none;
+a:has(img):hover {
+  background-color: transparent;
 }
 
 h1, h2, h3, h4, h5 {
@@ -337,3 +340,5 @@ span {
 .spwht {
   color: var(--txt);
 }
+
+/*---img---*/

@@ -72,6 +72,9 @@ if ( url.includes("more/") ) {
 if ( url.includes("characters/") ) {
   relativePath = "..";
 }
+if ( url.includes("eggs/") ) {
+  relativePath = "..";
+}
 
 
 // if ( url.includes("posts/"))( url.includes("FOTW/"))( url.includes("more/")); {
