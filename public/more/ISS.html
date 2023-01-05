@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>aaaaaaa</title>
+</head>
+<style>
+.main {
+    width: 100%;
+    background-color: rgb(0, 0, 0);
+}
+.top{
+    position: fixed;
+    background-color: rgb(0, 0, 0);
+    display: flex;
+    left: 0;
+  bottom: 0;
+  z-index: 10;
+}
+.stats {
+  padding-left: 100px;
+    padding-right: 100px;
+    color: #ffffff;
+    font-size: 20px;
+}
+.mainvid {
+  position: relative; 
+  top: -100px;
+  z-index: 1;
+}
+</style>
+<body>
+
+    <h1>iss tracka</h1>
+<div class="main" id="main">
+    <div class="top">
+        <div class="stats">
+          <p>click the uhh button for full scree <button onclick="var el = document.getElementById('main'); el.requestFullscreen();">G</button></p> 
+            <p>Latitude: <span id="latitude"></span>°</p>
+            <p>Longitude: <span id="longitude"></span>°</p>
+            <p>Velocity: <span id="velocity"></span> km/s</p>
+            <p>Velocity: <span id="velocity2"></span> km/h</p>
+        </div>
+        <iframe src="https://isstracker.spaceflight.esa.int/" id="iss-pos" width="625" height="270px" frameborder="0" scrolling="no" allowfullscreen="" title="ESU ISS tracking map">ESA ISS tracking map</iframe>
+        <iframe width="480" height="270" src="https://ustream.tv/embed/17074538" scrolling="no" allowfullscreen webkitallowfullscreen frameborder="0" style="border: 0 none transparent;"></iframe>
+    </div>
+  <iframe width="100%" height="900" src="https://ustream.tv/embed/9408562" class="mainvid" scrolling="no" allowfullscreen webkitallowfullscreen frameborder="0" style="border: 0 none transparent;"></iframe>
+
+</div>
+
+</body>
+<script>
+
+const whereIsISS_url = 'https://api.wheretheiss.at/v1/satellites/25544';
+
+const latitude = document.getElementById('latitude'),
+      longitude = document.getElementById('longitude'),
+      velocity = document.getElementById('velocity');
+      velocity2 = document.getElementById('velocity2');
+
+async function getData() {
+  try {
+    const response = await fetch(whereIsISS_url);
+    const data = await response.json();
+    
+    latitude.textContent = data.latitude.toFixed(2);
+    longitude.textContent = data.longitude.toFixed(2);
+    velocity.textContent = ((data.velocity * 0.621371 / 60) / 60).toFixed(2);
+    velocity2.textContent = data.velocity.toFixed(2);
+
+
+  } catch(error) {
+    alert('error D: ')
+  }
+}
+function refreshData() {
+  setInterval(function() {
+
+    getData();
+
+  }, 1000);
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  getData();
+  refreshData();
+});
+
+</script>
+</html>
