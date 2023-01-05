@@ -33,6 +33,7 @@ let authorLink = "sep.neocities.org"; // Enter your website, social media, etc. 
 let postsArray = [
 //[ "posts/2020-11-10-Special-Characters-Example.html", encodeURI( 'Spéci@l "Character\'s" Examp|e' ) ]
 //[ "posts/2020-11-10-My-Third-Post-Example.html" ],
+[ "posts/2023-01-05-scanlines-tutorial.html" ],
 [ "posts/2023-01-03-Journal.html" ],
 [ "posts/2023-01-01-new-years!.html" ],
 [ "posts/2022-12-28-Orthodoxy.html" ],
@@ -94,7 +95,7 @@ let headimg = '<h1>SEP</h1>';
 
 
 //Write the Footer HTML, which has information about the blog.
-let footerHTML = "<hr>" + '<div s tyle="font-size: 15px;"><a href="https://hotlinewebring.club/sep/previous">< prev</a> | <a href="https://hotlinewebring.club/">hotline webring</a> | <a href="https://hotlinewebring.club/sep/next">next ></a></div>' + "<br>" + ' welcome, visitor #<span id="hitcount"></span>';
+let footerHTML = '<hr>' + '<div s tyle="font-size: 15px;"><a href="https://hotlinewebring.club/sep/previous">< prev</a> | <a href="https://hotlinewebring.club/">hotline webring</a> | <a href="https://hotlinewebring.club/sep/next">next ></a></div>' + "<br>" + ' welcome, visitor #<span id="hitcount"></span>';
 
 //To do the following stuff, we want to know where we are in the posts array (if we're currently on a post page).
 let currentIndex = -1;
@@ -166,11 +167,12 @@ function formatPostLink(i) {
     }
   }
   if (  postDateFormat.test ( postsArray[i][0].slice( 6,17 ) ) ) {
-    return '<li><a href="' + relativePath + '/'+ postsArray[i][0] +'">' + '<span class="spwht">' + postsArray[i][0].slice(14,16) + "/" + postsArray[i][0].slice(11,13) + "/" + postsArray[i][0].slice(6,10) + '</span>' + " > " + postTitle_i + '</a></li>';
+    return '<li><a href="' + relativePath + '/'+ postsArray[i][0] +'">' + " > " + postTitle_i + '</a></li>';
   } else {
     return '<li><a href="' + relativePath + '/'+ postsArray[i][0] +'">' + postTitle_i + '</a></li>';
   }
 }
+//     return '<li><a href="' + relativePath + '/'+ postsArray[i][0] +'">' + '<span class="spwht">' + postsArray[i][0].slice(14,16) + "/" + postsArray[i][0].slice(11,13) + "/" + postsArray[i][0].slice(6,10) + '</span>' + " > " + postTitle_i + '</a></li>';
 
 let postListHTML = "<ul>";
 for ( let i = 0; i < postsArray.length; i++ ) {
@@ -179,8 +181,8 @@ for ( let i = 0; i < postsArray.length; i++ ) {
 postListHTML += "</ul>";
 
 //Generate the Recent Post List HTML, which can be shown on the home page (or wherever you want!)
-let recentPostsCutoff = 5; //Hey YOU! Change this number to set how many recent posts to show before cutting it off with a "more posts" link.
-let recentPostListHTML = "<h2>recent posts</h2><ul>";
+let recentPostsCutoff = 3; //Hey YOU! Change this number to set how many recent posts to show before cutting it off with a "more posts" link.
+let recentPostListHTML = "<p>recent posts</p><ul>";
 let numberOfRecentPosts = Math.min( recentPostsCutoff, postsArray.length );
 for ( let i = 0; i < numberOfRecentPosts; i++ ) {
   recentPostListHTML += formatPostLink(i);
