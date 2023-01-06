@@ -86,8 +86,8 @@ if ( url.includes("eggs/") ) {
 let headerHTML = '<ul> <li><a href="' + relativePath + '/index.html">home</a></li>' + 
 '<li><a href="' + relativePath + '/about.html">about</a></li>' +
 '<li><a href="' + relativePath + '/posts.html">posts</a></li>' +
-'<li><a href="' + relativePath + '/art.html">art</a></li>' +
 '<li><a href="' + relativePath + '/flags.html">flags</a></li>' +
+'<li><a href="' + relativePath + '/art.html">art</a></li>' +
 '<li><a href="' + relativePath + '/more.html">more</a></li> </ul>';
 
 //Write the Header HTML, a series of list items containing links.
