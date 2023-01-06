@@ -10,9 +10,6 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@6.6.6/css/flag-icons.min.css"/>    
   </head>
 <style>
-  img {
-width: 25vh;
-  }
 </style>
   <body>
     <div id="headimg"></div>
@@ -22,35 +19,7 @@ width: 25vh;
       
       
       <h1>FLAGS</h1>
-
-      <p>collected cards</p>
-      <img src="images/cards/poland.png" alt=""><img src="images/cards/USA.png" alt=""><img src="images/cards/wales.png" alt="">
-
-      <details>
-        <summary>collected<span class="icon">▶</span></summary>
-        <p>heres the flags ive collected so far!! (in order from recently collected to first collected)</p>
-
-        <h2>150 x 90cm</h2>
-        <span class="fi fi-pl"></span><span class="fi fi-gr"></span><span class="fi fi-de"></span><span class="fi fi-us"></span><span class="fi fi-gb-wls"></span>
-
-        <h2>20 x 10cm</h2>
-        <span class="fi fi-nl"></span>
-        <span class="fi fi-hr"></span>
-        <span class="fi fi-gb"></span>
-        <span class="fi fi-xk"></span>
-        <span class="fi fi-gr"></span>
-        <span class="fi fi-nr"></span>
-        <span class="fi fi-pa"></span>
-        <span class="fi fi-za"></span>
-        <span class="fi fi-br"></span>
-        <span class="fi fi-in"></span>
-        <span class="fi fi-bt"></span>
-        <span class="fi fi-de"></span>
-        <span class="fi fi-tr"></span>
-        <span class="fi fi-ca"></span>
-        <span class="fi fi-im"></span>
-      </details>
-
+      <iframe src="collected/cards.html" frameborder="0" width="100%" height="315"></iframe>
       <hr>
       <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLuf3G1-ZOgTlUCKP6J3EYyaP5NXU3ysyR" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
       <p>because im so cool ill share a picture of my room</p>
@@ -60,5 +29,15 @@ width: 25vh;
     <div id="footer"></div>
     </div>
   <script src="./script.js"></script>
+<script>
+var x = document.getElementById("myImage")
+function change(){
+    if (x.src == "a.png")
+         x.src = "b.png"
+    else 
+         x.src = "a.png"
+}
+</script>
+
   </body>
 </html>
