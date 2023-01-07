@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<style>
+* {
+	font-size: 2vh;
+	font-family: monospace;
+}
+body {
+		background-color: black;
+		color: white;
+}
+ul {
+    list-style: none;
+    padding-left: 0;
+}
+hr {
+    border-color: black;
+}
+input[type=text], input[type=text]:focus {
+	width: 90%;
+	border: none;
+	outline: none;
+  background-color: black;
+  color: white;
+}
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: black;
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: black;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  color: black;
+}
+</style>
+
+<body>
+	<div class="window">
+		<ul class="result">
+		  <li class="ready">not Microsoft Windows [Version 0.0.1]
+			<br>(c) not Microsoft Corporation. All rights reserved.</li>
+      <br>
+		</ul>
+		
+		<div class="command-area">
+		  <label for="command-input">C:\Users\sep></label>
+		  <input type="text" id="command-input" class="command" placeholder="type command here…" />
+		</div>
+	  </div>
+</body>
+
+<script>
+function getInput() {
+  command = commandInput.value;
+  return command;
+}
+
+function attachCommand() {
+  var li = document.createElement('li');
+  li.textContent = getInput();
+
+  var span = document.createElement('span');
+  span.className = 'path';
+  span.textContent = path;
+
+  li.insertBefore(span,li.firstChild);
+  
+  result.appendChild(li);
+}
+
+function returnResponse() {
+  var li = document.createElement('li');
+  
+  var cnf = 'Command not found. Try "help" for a list of commands.';
+  var helpcmd = 'hi';
+  var anstest = document.getElementById('command-input').value;
+
+if (anstest == "help") {
+	li.innerHTML = `
+  <li>For more information on a specific command, type HELP command-name</li>
+  <li>help       this thing duh</li>
+	<li>index      i dunno</li>
+	<li>hello      </li>
+  <hr>
+  <li>For more information on tools see the command-line reference in the online help.</li>
+  <hr>
+	`;
+}
+else if (anstest == "hello") {
+	li.innerHTML = 'hi! <hr>';
+}
+else {
+	li.innerHTML = "'" + anstest + "'" + ' is not recognized as an internal or external command, operable program or batch file. <hr>';
+}
+  
+  result.appendChild(li);
+}
+
+function repeatInput() {
+  commandInput.value = command;
+}
+
+function scrollToBottom() {
+  result.scrollTop = result.scrollHeight;
+}
+
+function doTheThing() {
+  if(getInput().trim() !== '') {
+    attachCommand();
+    returnResponse();
+    scrollToBottom();
+  }
+  
+  commandInput.value = '';
+}
+
+var commandInput = document.getElementById('command-input'),
+    result = document.querySelector('.result'),
+    command = '',
+    path = 'C:\\Users\\sep> ';
+
+commandInput.addEventListener('keydown',function(e){
+  if(e.keyCode === 13) doTheThing();
+  if(e.keyCode === 38) repeatInput();
+});
+</script>
+</html>
