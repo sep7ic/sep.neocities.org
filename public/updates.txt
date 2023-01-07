@@ -1,5 +1,7 @@
 updates (created 07/01/23 00:00):
 
+08/01/23 11:21 - added P about my CLI website and updated the actual website itself.
+
 08/01/23 10:03 - changed FTOD (oops sorry for being late). set yesterdays "AYIP" to neutral.
 
 07/01/23 20:30 - added entry to Journal post. made status link back to this file.

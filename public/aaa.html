@@ -43,7 +43,7 @@ input[type=text], input[type=text]:focus {
 }
 </style>
 
-<body>
+<body onload="getUsername()">
 	<div class="window">
 		<ul class="result">
 		  <li class="ready">not Microsoft Windows [Version 0.0.1]
@@ -52,13 +52,21 @@ input[type=text], input[type=text]:focus {
 		</ul>
 		
 		<div class="command-area">
-		  <label for="command-input">C:\Users\sep></label>
+		  <label for="command-input" id="dirname">C:\Users\waiting...></label>
 		  <input type="text" id="command-input" class="command" placeholder="type command here…" />
 		</div>
 	  </div>
 </body>
-
 <script>
+
+function getUsername() {
+  let userName = prompt("please enter name", "");
+  if (userName != null) {
+    document.getElementById("dirname").innerHTML =
+    "C:\\Users\\" + userName + ">";
+    document.getElementById("command-input").focus();
+  }
+
 function getInput() {
   command = commandInput.value;
   return command;
@@ -80,20 +88,25 @@ function attachCommand() {
 function returnResponse() {
   var li = document.createElement('li');
   
-  var cnf = 'Command not found. Try "help" for a list of commands.';
-  var helpcmd = 'hi';
   var anstest = document.getElementById('command-input').value;
 
 if (anstest == "help") {
 	li.innerHTML = `
   <li>For more information on a specific command, type HELP command-name</li>
   <li>help       this thing duh</li>
-	<li>index      i dunno</li>
-	<li>hello      </li>
+	<li>index      home page</li>
+	<li>flags      displays a list of my flags</li>
+  <li>hello      </li>
   <hr>
   <li>For more information on tools see the command-line reference in the online help.</li>
   <hr>
 	`;
+}
+else if (anstest == "index") {
+	li.innerHTML = 'this is supposed to be a homepage <hr>';
+}
+else if (anstest == "flags") {
+	li.innerHTML = 'i have USA, mini USA, Greece x3, UK, Poland, Germany, Kingdom of Serbia, Serbia and Montenegro, Austria-Hungary, Wales, i forogt the rest <hr>';
 }
 else if (anstest == "hello") {
 	li.innerHTML = 'hi! <hr>';
@@ -126,11 +139,14 @@ function doTheThing() {
 var commandInput = document.getElementById('command-input'),
     result = document.querySelector('.result'),
     command = '',
-    path = 'C:\\Users\\sep> ';
+    path = "C:\\Users\\" + userName + ">";
 
 commandInput.addEventListener('keydown',function(e){
   if(e.keyCode === 13) doTheThing();
   if(e.keyCode === 38) repeatInput();
 });
+
+}
+
 </script>
 </html>
