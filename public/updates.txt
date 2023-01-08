@@ -1,5 +1,7 @@
 updates (created 07/01/23 00:00):
 
+08/01/23 16:45 - added "fellas thoughts" post for fellas thoughts lol.
+
 08/01/23 15:42 - changed about page to flexbox and removes neolink ads section on index.html. FINALLY changed my character image to link to the correct page.
 
 08/01/23 11:21 - added P about my CLI website and updated the actual website itself.
