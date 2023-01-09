@@ -33,7 +33,6 @@ let authorLink = "sep.neocities.org"; // Enter your website, social media, etc. 
 let postsArray = [
 //[ "posts/2020-11-10-Special-Characters-Example.html", encodeURI( 'Spéci@l "Character\'s" Examp|e' ) ]
 //[ "posts/2020-11-10-My-Third-Post-Example.html" ],
-[ "posts/2023-08-01-fellas-thoughts.html" ],
 [ "posts/2023-01-05-scanlines-tutorial.html" ],
 [ "posts/2023-01-03-Journal.html" ],
 [ "posts/2023-01-01-new-years!.html" ],
