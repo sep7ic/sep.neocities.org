@@ -121,14 +121,8 @@ h1 {
   margin: 3em auto;
   width: 90%;
 	max-width: 70%;
-	background-color: var(--bg);
-  color: var(--txt); 
-  outline-color: var(--outline);
-  outline-style: solid;
-  outline-width: 1px;
-  outline-offset: 0;
   margin-top: 0px;
-  box-shadow: 0 3px 30px 10px black;
+  color: var(--txt);
 }
 .flexxy {
   display: flex;
@@ -137,16 +131,16 @@ padding: 0;
 }
 .rightflex {
   flex-basis: 20%;
-  outline-style: solid;
-  outline-width: 1px;
-  outline-offset: 0;
+  border-style: solid;
+  border-width: 0px;
   padding: 10px 2% 20px 2%;
+  border-style: solid;
+  border-width: 0 0 0 1px;
 }
 .leftflex {
   flex-basis: 80%;
-  outline-style: solid;
-  outline-width: 1px;
-  outline-offset: 0;
+  border-style: solid;
+  border-width: 0px;
   padding: 10px 5% 20px 5%;
 } 
 
@@ -169,29 +163,32 @@ padding: 0;
 
 #content {
   padding: 10px 5% 20px 5%;
+  border-style: solid;
+  border-width: 1px;
+  background-color: var(--bg);
+  
+  box-shadow: 0 3px 30px 10px black;
+  z-index: 1;
+  margin-bottom: 3vh;
 }
 
 
 /*HEADER STYLE*/
+
 #header {
   background-color: var(--bg);
-  padding: 0 5%;
-  border-color: var(--outline);
-  border-style: solid;
-  border-width: 0 0 1px 0;
 
-  background-color: #000;
-  background-image: radial-gradient(var(--maintxt) 10%, transparent 11%), radial-gradient(var(--maintxt) 10%, transparent 11%);
-  background-size: 5px 5px;
-  background-position: 0 0, 5px 5px;
-  background-repeat: repeat;
+  border-style: solid;
+  border-width: 1px;
   
+  box-shadow: 0 3px 30px 10px black;  
 }
 
 #header ul {
   list-style-type: none;
   padding: 0.5em 0;
   margin: 0;
+  text-align: center
 }
 #header li {
   font-size: 1.2em;
@@ -199,6 +196,8 @@ padding: 0;
   margin-right: 1.5em;
   margin-bottom: 0.2em;
   margin-top: 0.2em;
+  background-color: var(--bg);
+  display: inline-block;
 }
 #header li a {
   color: var(--txt);
@@ -239,7 +238,14 @@ padding: 0;
   font-size: 0.8em;
   padding: 0 5% 10px 5%;
   text-align: center;
+  color: var(--txt);
+  background-color: var(--bg);
+  box-shadow: 0 3px 30px 10px black;  
+  border-style: solid;
+  border-width: 1px;
+  margin-bottom: 3vh;
 }
+
 
 /*POST LIST STYLE*/
 #featuredposts ul {
