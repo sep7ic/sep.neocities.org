@@ -95,7 +95,35 @@ let headimg = '<h1>SEP</h1>';
                                 
 
 //Write the Footer HTML, which has information about the blog.
-let footerHTML = '<br>' + '<div class="footer" style="font-size: 15px;"><a href="https://hotlinewebring.club/sep/previous">< prev</a> | <a href="https://hotlinewebring.club/">hotline webring</a> | <a href="https://hotlinewebring.club/sep/next">next ></a></div>' + "<br>" + '<div class="yw-widget-text" data-yw-url="https://sep.neocities.org"></div><script src="https://yesterweb.org/js/widget.js"></script>' + "<br>" + ' welcome, visitor #<span id="hitcount"></span>' + '<a href="https://info.flagcounter.com/IolJ"><img src="https://s11.flagcounter.com/count2/IolJ/bg_FFFFFF/txt_000000/border_CCCCCC/columns_2/maxflags_250/viewers_0/labels_0/pageviews_0/flags_0/percent_0/" alt="Flag Counter" border="0" style="display: none"></a>';
+let footerHTML = `
+<br> 
+<div class="footer" style="font-size: 15px;"><a href="https://hotlinewebring.club/sep/previous">< prev</a> | <a href="https://hotlinewebring.club/">hotline webring</a> | <a href="https://hotlinewebring.club/sep/next">next ></a></div>
+<br>
+welcome, visitor #<span id="hitcount"></span>
+<a href="https://info.flagcounter.com/IolJ"><img src="https://s11.flagcounter.com/count2/IolJ/bg_FFFFFF/txt_000000/border_CCCCCC/columns_2/maxflags_250/viewers_0/labels_0/pageviews_0/flags_0/percent_0/" alt="Flag Counter" border="0" style="display: none"></a>
+<br>
+
+<div class="audio-player">
+
+<audio autoplay="" loop="" name="media" id="audio">
+  <source src="https://drive.google.com/uc?id=1Q67zCgEqZrmyW5RAg3zsi_xEHZ229S1P" type="audio/mp3">
+</audio>
+
+<div class="player-controls">
+
+  <button id="playAudio"></button>
+
+  <div id="seekObjContainer">
+    <div id="seekObj">
+      <div id="percentage"></div>
+    </div>
+  </div>
+
+  <p><small id="currentTime">00:00</small></p>
+
+</div>
+</div>
+`;
 
 //To do the following stuff, we want to know where we are in the posts array (if we're currently on a post page).
 let currentIndex = -1;
@@ -280,3 +308,66 @@ document.getElementById("hitcount").innerHTML = num_str;
   xhttp.open("GET", "https://weirdscifi.ratiosemper.com/neocities.php?sitename=sep", true);
   xhttp.send();
   //----------------------------------------------//
+
+
+    //---------------------audio-------------------------//
+    function $(id) { return document.getElementById(id); };
+    const media = $('audio');
+    
+    let ui = {
+      play: 'playAudio',
+      audio: 'audio',
+      percentage: 'percentage',
+      seekObj: 'seekObj',
+      currentTime: 'currentTime'
+    };
+    
+    function togglePlay() {
+      if (media.paused === false) {
+        media.pause();
+        $(ui.play).classList.remove('pause');
+      } else {
+        media.play();
+        $(ui.play).classList.add('pause');
+      }
+    }
+    
+    function calculatePercentPlayed() {
+      let percentage = (media.currentTime / media.duration).toFixed(2) * 100;
+      $(ui.percentage).style.width = `${percentage}%`;
+    }
+    
+    function calculateCurrentValue(currentTime) {
+      const currentMinute = parseInt(currentTime / 60) % 60;
+      const currentSecondsLong = currentTime % 60;
+      const currentSeconds = currentSecondsLong.toFixed();
+      const currentTimeFormatted = `${currentMinute < 10 ? `0${currentMinute}` : currentMinute}:${
+      currentSeconds < 10 ? `0${currentSeconds}` : currentSeconds
+      }`;
+      
+      return currentTimeFormatted;
+    }
+    
+    function initProgressBar() {
+      const currentTime = calculateCurrentValue(media.currentTime);
+      $(ui.currentTime).innerHTML = currentTime;
+      $(ui.seekObj).addEventListener('click', seek);
+    
+      media.onended = () => {
+        $(ui.play).classList.remove('pause');
+        $(ui.percentage).style.width = 0;
+        $(ui.currentTime).innerHTML = '00:00';
+      };
+    
+      function seek(e) {
+        const percent = e.offsetX / this.offsetWidth;
+        media.currentTime = percent * media.duration;
+      }
+      
+      calculatePercentPlayed();
+    }
+    
+    $(ui.play).addEventListener('click', togglePlay)
+    $(ui.audio).addEventListener('timeupdate', initProgressBar);
+
+      //----------------------------------------------//
