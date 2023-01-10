@@ -92,10 +92,10 @@ let headerHTML = '<ul> <li><a href="' + relativePath + '/index.html">home</a></l
 
 //Write the Header HTML, a series of list items containing links.
 let headimg = '<h1>SEP</h1>';
-
+                                
 
 //Write the Footer HTML, which has information about the blog.
-let footerHTML = '<br>' + '<div class="footer" style="font-size: 15px;"><a href="https://hotlinewebring.club/sep/previous">< prev</a> | <a href="https://hotlinewebring.club/">hotline webring</a> | <a href="https://hotlinewebring.club/sep/next">next ></a></div>' + "<br>" + ' welcome, visitor #<span id="hitcount"></span>' + '<a href="https://info.flagcounter.com/IolJ"><img src="https://s11.flagcounter.com/count2/IolJ/bg_FFFFFF/txt_000000/border_CCCCCC/columns_2/maxflags_250/viewers_0/labels_0/pageviews_0/flags_0/percent_0/" alt="Flag Counter" border="0" style="display: none"></a>';
+let footerHTML = '<br>' + '<div class="footer" style="font-size: 15px;"><a href="https://hotlinewebring.club/sep/previous">< prev</a> | <a href="https://hotlinewebring.club/">hotline webring</a> | <a href="https://hotlinewebring.club/sep/next">next ></a></div>' + "<br>" + '<div class="yw-widget-text" data-yw-url="https://sep.neocities.org"></div><script src="https://yesterweb.org/js/widget.js"></script>' + "<br>" + ' welcome, visitor #<span id="hitcount"></span>' + '<a href="https://info.flagcounter.com/IolJ"><img src="https://s11.flagcounter.com/count2/IolJ/bg_FFFFFF/txt_000000/border_CCCCCC/columns_2/maxflags_250/viewers_0/labels_0/pageviews_0/flags_0/percent_0/" alt="Flag Counter" border="0" style="display: none"></a>';
 
 //To do the following stuff, we want to know where we are in the posts array (if we're currently on a post page).
 let currentIndex = -1;
