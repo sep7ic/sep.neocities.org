@@ -26,19 +26,38 @@ transform: scale(5);
     <div id="headimg"></div>
     <div id="container">
     <div id="header">...</div>
-    <div id="content">
-      
+    <div id="content">   
       <p>creations/art</p>
-      <hr>
-      <p>CONTENT WARNING. THIS WILL CONTESTTAIN GOREY IMAEGS SO VIEW AT YOUR OWN EXPENSE OR WHATEVER I DONT CARE.</p>
-      <hr>
-      <p>i tried to make it in order of date but some got messed ip</p>
-      <p>oh yeah wip</p>
-      
-    
+    </div> 
+    <div id="content">   
+      <p>2021</p>
+      <a target="_blank" href="" onClick='test(this)'><img src="/images/art/21-12-28-2.png" alt=""></a>
+      <a target="_blank" href=""><img src="/images/art/21-12-28-1.png" alt=""></a>
+      <img src="/images/art/21-12-28.png" alt="">
+      <img src="/images/art/21-12-27.png" alt="">
+      <img src="/images/art/21-11-28.png" alt="">
+      <img src="/images/art/21-11-25.png" alt="">
+      <img src="/images/art/21-11-24-1.png" alt="">
+      <img src="/images/art/21-11-24.png" alt="">
+      <img src="/images/art/21-11-17.png" alt="">
+      <img src="/images/art/21-11-08.png" alt="">
+      <img src="/images/art/21-10-30.png" alt="">
     </div> 
     <div id="footer"></div>
     </div> 
   <script src="../script.js"></script>
   </body>
+
+  <script>
+
+    function test(element) { 
+    var newTab = window.open();
+    setTimeout(function(){newTab.document.body.innerHTML = element.innerHTML;
+    },500);
+     
+      return false;
+    
+    }
+    </script>
+
 </html>
