@@ -1,62 +1,29 @@
-
-   :root {
-    --bg: black;
-    --txt: white;
-    --outline: white;
-    --font: 'video';
-    --maintxt: #d4ff00;
+/*---ROOT & BODY---*/
+:root {
+    --bg: white;
+    --txt: black;
+    --outline: black;
+    --maintxt: darkblue;
     --other:   white;
-    /*#C4FF7F #384964 #7fb2ff ##284cbc*/
   }
-
-@font-face {
-  font-family: video;
-  src: url(videotype.ttf);
-}
-
 body {
-  background-color: var(--bg);
-  background-image: url('backg.webp');
-	background-position: top;
-  background-repeat: repeat-x;
-  background-attachment: fixed;
-  background-size: cover;
-  font-size: 18px;
-  font-family: var(--font);
+  background: url(https://primate.soy/noise.png) gray fixed;
+  background-size: 2px;
+	font-family: monospace;
   margin: 0;
-  /* cursor: url('cursor.png'),auto !important;*/
 }
 
-
-@keyframes bgScroll {
-  0% {
-    background-position : 0px 0px
-  }
-  100% {
-    background-position : 1920px 0px
-  }
-}
-
-
-/* width */
+/*---SCROLLBAR---*/
 ::-webkit-scrollbar {
   width: 1px;
 }
-
-/* Track */
 ::-webkit-scrollbar-track {
   background: var(--bg); 
 }
- 
-/* Handle */
 ::-webkit-scrollbar-thumb {
   background: var(--other); 
 }
 
-
-p {
-  line-height: 1.6em;
-}
 
 hr {
   border: solid var(--outline);
@@ -109,81 +76,47 @@ a:has(img):hover {
   background-color: transparent;
 }
 
+
+/*---TEXT---*/
+p {
+  line-height: 1.6em;
+}
 h1, h2, h3, h4, h5 {
-  font-family: var(--font);
+  font-family: monospace;
   color: var(--txt);
 }
 h1 {
   color: var(--maintxt);
 }
 
+/*---CONTAINER & CONTENT---*/
 #container {
   margin: 3em auto;
   width: 90%;
-	max-width: 70%;
+	max-width: 45%;
   margin-top: 0px;
   color: var(--txt);
 }
-.flexxy {
-  display: flex;
-  flex-wrap: nowrap;
-padding: 0;
-}
-.rightflex {
-  flex-basis: 20%;
-  border-style: solid;
-  border-width: 0px;
-  padding: 10px 2% 20px 2%;
-  border-style: solid;
-  border-width: 0 0 0 1px;
-}
-.leftflex {
-  flex-basis: 80%;
-  border-style: solid;
-  border-width: 0px;
-  padding: 10px 5% 20px 5%;
-} 
-
 @media screen and (max-width: 800px) {
   #container {   
     max-width: 99%;
   }
-  .leftcolumn, .rightcolumn {   
-    width: 100%;
-  }
-  .flexxy {
-    flex-wrap: wrap;
-  }
-  .leftflex, .rightflex {
-    flex-basis: 100%;
-		margin-left: auto;
-		margin-right: auto; 
-  }
 }
-
 #content {
   padding: 10px 5% 20px 5%;
   border-style: solid;
   border-width: 1px;
   background-color: var(--bg);
-  
-  box-shadow: 0 3px 30px 10px black;
   z-index: 1;
   margin-bottom: 3vh;
 }
 
 
-/*HEADER STYLE*/
 
+/*---HEADER---*/
 #header {
-  background-color: var(--bg);
-
-  border-style: solid;
-  border-width: 1px;
-  
-  box-shadow: 0 3px 30px 10px black;  
+  margin-bottom: 2vh;
 }
-
 #header ul {
   list-style-type: none;
   padding: 0.5em 0;
@@ -196,7 +129,6 @@ padding: 0;
   margin-right: 1.5em;
   margin-bottom: 0.2em;
   margin-top: 0.2em;
-  background-color: var(--bg);
   display: inline-block;
 }
 #header li a {
@@ -208,67 +140,19 @@ padding: 0;
   text-decoration: underline;
 }
 
-/*POST LIST STYLE*/
-#postlistdiv ul {
-  padding: 0;
-  list-style-type: none;
-}
-#recentpostlistdiv ul {
-  padding: 0;
-  list-style-type: none;
-}
-.moreposts {
-  font-size: 0.8em;
-  margin-top: 0.2em;
-}
-
-/*NEXT AND PREVIOUS LINKS STYLE*/
-#nextprev {
-  text-align: center;
-  margin-top: 1.4em;
-}
-
-/*DISQUS STYLE*/
-#disqus_thread {
-  margin-top: 1.6em;
-}
-
-/*FOOTER STYLE*/
+/*--FOOTER STYLE--*/
 #footer {
   font-size: 0.8em;
   padding: 0 5% 10px 5%;
   text-align: center;
   color: var(--txt);
   background-color: var(--bg);
-  box-shadow: 0 3px 30px 10px black;  
   border-style: solid;
   border-width: 1px;
   margin-bottom: 3vh;
 }
 
-
-/*POST LIST STYLE*/
-#featuredposts ul {
-  font-size: 1.2em;
-  padding: 0;
-  list-style-type: none;
-}
-
-a {
-  text-decoration: none;
-  color: var(--maintxt);
-}
-
-.zoom {
-  width: 50%;
-  transition: width .2s;
-}
-
-.zoom:hover {
- width: 100%;
-}
-
-/*-------------------------------------------*/
+/*---DETAILS & SUMMARY---*/
 details {
   user-select: none;
   margin-bottom: 15px;
@@ -276,42 +160,41 @@ details {
 details summary span.icon {
   transform: rotate(0deg);
 }
-
 details>summary span.icon {
   width: 24px;
   height: 24px;
   transition: all 0.3s;
   margin-left: auto;
 }
-
 details[open] summary span.icon {
   transform: rotate(90deg);
 }
-
 summary {
   display: flex;
   cursor: pointer;
   color: var(--maintxt);
   font-size: 26px;
 }
-
 summary::-webkit-details-marker {
   display: none;
 }
 
-/*---------------------*/
+/*---HEAD IMG/TEXT---*/
 #headimg {
   width: 100%;
   margin: 10px 0 10px 0;
+  background-color: var(--bg);
+  border-style: solid;
+  border-width: 1px;
 }
-
 #headimg h1 {
  text-align: center; 
   font-size: 5em;
   margin: 0;
-    text-shadow: 0 0px 10px black;
+    color: var(--txt);
 }
 
+/*---TABLE---*/
 td{
   border:1px solid var(--outline);
   padding: 10px;
@@ -321,15 +204,15 @@ width: 30px;
 height: 30px;
 }
 
+/*---SPAN---*/
 span {
   color: var(--maintxt);
 }
-
 .spwht {
   color: var(--txt);
 }
 
-/*-----audio player */
+/*---AUDIO PLAYER---*/
 .audio-player {
   width: 470px;
   margin: auto;

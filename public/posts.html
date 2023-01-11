@@ -7,24 +7,32 @@
     <link rel="icon" href="./images/favicon.png" type="image/x-icon"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8"> 
-    <link href="./style/style.css" rel="stylesheet" type="text/css" media="all">    
+    <link href="./style/style.css" rel="stylesheet" type="text/css" media="all">  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-timeago/1.6.7/jquery.timeago.min.js" type="text/javascript"></script>
   </head>
   <body>
-    <div id="headimg"></div>
     <div id="container">
+      <div id="headimg"></div>
     <div id="header">...</div>
     <div id="content">    
     <h1>POSTS</h1>    
-    <hr>
-    <h2>featured posts</h2>
-    <a href="posts/2023-01-03-Journal.html"><span class="spwht">03/01/2023</span> > Journal</a>
-    <hr>
-    <h2>recent posts</h2>
-    <div id="postlistdiv"></div>
-    </div>
-    <div id="footer"></div>
-    </div>
-    
+<p>here is where ill </p>  
+    </div>  
+
+    <div id="content">    
+      <h1>post</h1>
+        <abbr class="timeago" title="2023-01-11T20:27:17+13:00">July 17, 2008</abbr>
+        <p>hello!! this is my first post from my new layout/design!! ironic that i changed because i said i wouldnt change... lol</p>
+      </div>  
+      <div id="footer"></div>
+  </div>  
   <script src="./script.js"></script>
   </body>
+<script>
+  jQuery(document).ready(function() {
+  jQuery("abbr.timeago").timeago(); 
+  });
+</script>
+
 </html>
