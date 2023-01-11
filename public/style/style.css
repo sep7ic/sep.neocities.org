@@ -7,7 +7,7 @@
     --other:   white;
   }
 body {
-  background: url(https://primate.soy/noise.png) gray fixed;
+  background: url(noise.png) gray fixed;
   background-size: 2px;
 	font-family: monospace;
   margin: 0;
@@ -42,20 +42,6 @@ img {
 
 img:hover {
   transform: translate(0, -10px);
-}
-.right {
-  float: right;
-  margin-left: 1em;
-}
-.left {
-  float: left;
-  margin-right: 1em;
-}
-.center {
-  display: block;
-  margin-right: auto;
-  margin-left: auto;
-  text-align: center;
 }
 @media only screen and (min-width: 600px) {
   .small {
@@ -94,7 +80,6 @@ h1 {
   margin: 3em auto;
   width: 90%;
 	max-width: 45%;
-  margin-top: 0px;
   color: var(--txt);
 }
 @media screen and (max-width: 800px) {

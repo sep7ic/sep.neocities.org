@@ -43,6 +43,12 @@ welcome, visitor #<span id="hitcount"></span>
 </div>
 `;
 
+let bgimages = `
+<img src="images/dragon.png" style="position: absolute; z-index: -1; top: 1; left: 1;">
+
+<a href="https://www.deviantart.com/the-suicideking/art/Heraldic-Lion-258351757"><img src="images/lion.png" style="position: absolute; z-index: -1; top: 1; left: 1000px; width: 25%;"></a>
+`
+
 if (document.getElementById("headimg")) {
   document.getElementById("headimg").innerHTML = headimg;
 }
@@ -51,6 +57,9 @@ if (document.getElementById("header")) {
 }
 if (document.getElementById("footer")) {
   document.getElementById("footer").innerHTML = footerHTML;
+}
+if (document.getElementById("bgimages")) {
+  document.getElementById("bgimages").innerHTML = bgimages;
 }
 
 

@@ -2,8 +2,6 @@
 <html>
   <head>
     <title>POSTS</title>
-    <meta name="author" content="Marina Kittaka">
-    <meta name="description" content="The full list of posts on the Zonelets blog!">
     <link rel="icon" href="./images/favicon.png" type="image/x-icon"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8"> 
@@ -12,23 +10,49 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-timeago/1.6.7/jquery.timeago.min.js" type="text/javascript"></script>
   </head>
   <body>
+    <div id="bgimages"></div>
     <div id="container">
       <div id="headimg"></div>
     <div id="header">...</div>
     <div id="content">    
     <h1>POSTS</h1>    
-<p>here is where ill </p>  
+<p>here is where ill </p> 
+<p>tags:</p>
+<a id="tagALL" href="#">All</a> <a id="tagFOTD" href="#">FOTD</a> <a id="tagFLAGS" href="#">Flags</a>
     </div>  
 
-    <div id="content">    
-      <h1>post</h1>
-        <abbr class="timeago" title="2023-01-11T20:27:17+13:00">July 17, 2008</abbr>
+    <div id="content" class="all FOTD FLAGS">    
+      <h1>FOTD</h1>
+        <abbr class="timeago" title="2023-01-12T20:27+13:00">Jan 12, 2023, 00:00</abbr>
+        <p>for todays FOTD i thought id choose the all blacks flag because my mum came and gave me one today. ill link a picture here when i wake up.</p>
+      </div>  
+
+    <div id="content" class="all">    
+      <h1>first post!!</h1>
+        <abbr class="timeago" title="2023-01-11T20:27+13:00">Jan 11, 2023, 20:27</abbr>
         <p>hello!! this is my first post from my new layout/design!! ironic that i changed because i said i wouldnt change... lol</p>
       </div>  
+
       <div id="footer"></div>
   </div>  
   <script src="./script.js"></script>
   </body>
+
+  <script>
+     jQuery.noConflict();
+     jQuery( "#tagALL" ).click(function() {
+        jQuery(".all").show();
+      });  
+      jQuery( "#tagFOTD" ).click(function() {
+        jQuery(".all").hide();
+        jQuery(".FOTD").show();
+      });  
+      jQuery( "#tagFLAGS" ).click(function() {
+        jQuery(".all").hide();
+        jQuery(".FLAGS").show();
+      });  
+</script>
+
 <script>
   jQuery(document).ready(function() {
   jQuery("abbr.timeago").timeago(); 
