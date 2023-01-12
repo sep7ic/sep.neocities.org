@@ -120,6 +120,11 @@ h1 {
   box-shadow: 0 0.6em var(--bg);
   padding: 5px;
   width: calc(70% / 6);
+
+  position: relative;
+  top: 0;
+  transition: all 100ms ease-in-out;
+
 }
 #header li a {
   color: var(--txt);
@@ -128,6 +133,11 @@ h1 {
 }
 #header li a:hover {
   text-decoration: underline;
+}
+
+#header li:hover {
+  top: 0.2em;
+  box-shadow: 0 0.4em var(--bg);
 }
 
 /*--FOOTER STYLE--*/
