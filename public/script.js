@@ -12,7 +12,7 @@ let headerHTML = '<ul> <li><a href="' + relativePath + '/index.html">home</a></l
 '<li><a href="' + relativePath + '/more.html">more</a></li> </ul>';
 
 let headimg = `
-<img src="images/duck.png" style="float: left;"/>
+<img src="https://sep.neocities.org/images/duck.png" style="float: left;"/>
 <div style="margin:0 auto; text-align: center;">
 <pre>
 ███████╗███████╗██████╗ 
@@ -23,7 +23,7 @@ let headimg = `
 ╚══════╝╚══════╝╚═╝     
 </pre>
 </div>
-<img src="images/duck.png" style="transform: scaleX(-1); float: right;"/>
+<img src="https://sep.neocities.org/images/duck.png" style="transform: scaleX(-1); float: right;"/>
 &nbsp
 `;
 
@@ -58,9 +58,7 @@ welcome, visitor #<span id="hitcount"></span>
 `;
 
 let bgimages = `
-<img src="images/dragon.png" style="position: absolute; z-index: -1; top: 1; left: 1;">
-
-<a href="https://www.deviantart.com/the-suicideking/art/Heraldic-Lion-258351757"><img src="images/lion.png" style="position: absolute; z-index: -1; top: 1; left: 1000px; width: 25%;"></a>
+<img src="https://sep.neocities.org/images/dragon.png" style="position: absolute; z-index: -1; top: 1; left: 1; width: 35%;">
 `
 
 if (document.getElementById("headimg")) {
