@@ -7,12 +7,26 @@
     --other:   white;
   }
 body {
-  background: url(noise.png) gray fixed;
-  background-size: 2px;
+  background-image: url("https://preview.redd.it/c3du8b2ttoo51.png?auto=webp&s=436d95c8601206d52599b26cf7125a77f0dffe0a");
+  background-repeat: repeat-x;
+  background-attachment: fixed;
+  background-size: auto;
+  background-position: -10px;
+    /*background: url(noise.png) gray fixed;
+  background-size: 2px;*/
 	font-family: "ＭＳ Ｐゴシック";
   margin: 0;
+
+
   font-smooth: never;
 -webkit-font-smoothing : none;
+image-rendering: optimizeSpeed;             /* STOP SMOOTHING, GIVE ME SPEED  */
+image-rendering: -moz-crisp-edges;          /* Firefox                        */
+image-rendering: -o-crisp-edges;            /* Opera                          */
+image-rendering: -webkit-optimize-contrast; /* Chrome (and eventually Safari) */
+image-rendering: pixelated;                 /* Universal support since 2021   */
+image-rendering: optimize-contrast;         /* CSS3 Proposed                  */
+-ms-interpolation-mode: nearest-neighbor;   /* IE8+                           */
 }
 
 @font-face {
@@ -280,5 +294,5 @@ span {
 
 
 *:not(#header) {
-  border-color: var(--outline);
+  border-color: white;
 }

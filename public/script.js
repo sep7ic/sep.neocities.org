@@ -70,9 +70,6 @@ if (document.getElementById("header")) {
 if (document.getElementById("footer")) {
   document.getElementById("footer").innerHTML = footerHTML;
 }
-if (document.getElementById("bgimages")) {
-  document.getElementById("bgimages").innerHTML = bgimages;
-}
 
 
 // -------------visit counter----------------//
