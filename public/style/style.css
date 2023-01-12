@@ -1,16 +1,23 @@
 /*---ROOT & BODY---*/
 :root {
-    --bg: white;
-    --txt: black;
+    --bg: black;
+    --txt: white;
     --outline: black;
-    --maintxt: darkblue;
+    --maintxt: rgb(177, 177, 255);
     --other:   white;
   }
 body {
   background: url(noise.png) gray fixed;
   background-size: 2px;
-	font-family: monospace;
+	font-family: "ＭＳ Ｐゴシック";
   margin: 0;
+  font-smooth: never;
+-webkit-font-smoothing : none;
+}
+
+@font-face {
+  font-family: scan;
+  src: url("edunline.ttf");
 }
 
 /*---SCROLLBAR---*/
@@ -171,12 +178,25 @@ summary::-webkit-details-marker {
   background-color: var(--bg);
   border-style: solid;
   border-width: 1px;
+  height: 15vh;
+  display:inline-flex;
+  align-items:center;
 }
 #headimg h1 {
- text-align: center; 
   font-size: 5em;
   margin: 0;
     color: var(--txt);
+    margin-left: auto;
+    margin-right: auto;
+  font-family: scan;
+}
+#headimg pre {
+  margin: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+#headimg img {
+  height: 90%;
 }
 
 /*---TABLE---*/
@@ -248,4 +268,9 @@ span {
   top: 0;
   height: 100%;
   background-color: var(--maintxt);
+}
+
+
+* {
+  border-color: var(--outline);
 }

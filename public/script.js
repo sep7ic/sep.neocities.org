@@ -11,7 +11,21 @@ let headerHTML = '<ul> <li><a href="' + relativePath + '/index.html">home</a></l
 '<li><a href="' + relativePath + '/art.html">art</a></li>' +
 '<li><a href="' + relativePath + '/more.html">more</a></li> </ul>';
 
-let headimg = '<h1>SEP</h1>';
+let headimg = `
+<img src="images/duck.png" style="float: left;"/>
+<div style="margin:0 auto; text-align: center;">
+<pre>
+███████╗███████╗██████╗ 
+██╔════╝██╔════╝██╔══██╗
+███████╗█████╗  ██████╔╝
+╚════██║██╔══╝  ██╔═══╝ 
+███████║███████╗██║     
+╚══════╝╚══════╝╚═╝     
+</pre>
+</div>
+<img src="images/duck.png" style="transform: scaleX(-1); float: right;"/>
+&nbsp
+`;
 
 let footerHTML = `
 <br> 
