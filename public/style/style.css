@@ -1,3 +1,8 @@
+@font-face {
+  font-family: pixeltype;
+  src: url(MSGothicPixel.ttf);
+}
+
 /*---ROOT & BODY---*/
 :root {
     --bg: black;
@@ -14,7 +19,7 @@ body {
   background-position: -10px;
     /*background: url(noise.png) gray fixed;
   background-size: 2px;*/
-	font-family: "ＭＳ Ｐゴシック";
+	font-family: "pixeltype";
   margin: 0;
 
 
