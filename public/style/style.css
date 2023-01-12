@@ -16,12 +16,10 @@ body {
   background-repeat: repeat-x;
   background-attachment: fixed;
   background-size: auto;
-  background-position: -10px;
     /*background: url(noise.png) gray fixed;
   background-size: 2px;*/
-	font-family: "pixeltype";
+	font-family: "MS Gothic";
   margin: 0;
-
 
   font-smooth: never;
 -webkit-font-smoothing : none;
@@ -32,11 +30,6 @@ image-rendering: -webkit-optimize-contrast; /* Chrome (and eventually Safari) */
 image-rendering: pixelated;                 /* Universal support since 2021   */
 image-rendering: optimize-contrast;         /* CSS3 Proposed                  */
 -ms-interpolation-mode: nearest-neighbor;   /* IE8+                           */
-}
-
-@font-face {
-  font-family: scan;
-  src: url("edunline.ttf");
 }
 
 /*---SCROLLBAR---*/
