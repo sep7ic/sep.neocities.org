@@ -74,6 +74,10 @@ a:has(img):hover {
   background-color: transparent;
 }
 
+a:active, a:visited {
+  color: red;
+}
+
 
 /*---TEXT---*/
 p {
