@@ -10,6 +10,7 @@
     --outline: black;
     --maintxt: white;
     --other:   white;
+    --refd: red;
   }
 body {
   background-image: url("https://preview.redd.it/c3du8b2ttoo51.png?auto=webp&s=436d95c8601206d52599b26cf7125a77f0dffe0a");
@@ -291,7 +292,7 @@ span {
   left: 0;
   top: 0;
   height: 100%;
-  background-color: var(--maintxt);
+  background-color: var(--refd);
 }
 
 
