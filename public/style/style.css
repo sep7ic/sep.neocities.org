@@ -15,7 +15,7 @@ body {
   background-image: url("https://preview.redd.it/c3du8b2ttoo51.png?auto=webp&s=436d95c8601206d52599b26cf7125a77f0dffe0a");
   background-repeat: repeat-x;
   background-attachment: fixed;
-  background-size: auto;
+  background-size: auto 100%;
     /*background: url(noise.png) gray fixed;
   background-size: 2px;*/
 	font-family: "MS Gothic";
