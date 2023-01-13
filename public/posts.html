@@ -18,8 +18,15 @@
     <h1>POSTS</h1>    
 <p>here is where ill </p> 
 <p>tags:</p>
-<a id="tagALL" href="#">All</a> <a id="tagFOTD" href="#">FOTD</a> <a id="tagFLAGS" href="#">Flags</a>
+<a id="tagALL" href="#">All</a> <a id="tagFOTD" href="#">FOTD</a> <a id="tagFLAGS" href="#">Flags</a> <a id="tagQUO" href="#">Quotes</a>
     </div>  
+
+    <div id="content" class="all QUOTE">
+      <br>
+        <abbr class="timeago" title="2023-01-13T18:11+13:00">Jan 13, 2023, 18:11</abbr>
+        <blockquote>the pursuit of significance is but an eluding mirage; forever out of reach, taunting.</blockquote>
+        <p>- me :3</p>
+      </div>  
 
     <div id="content" class="all FOTD FLAGS">    
       <h1>FOTD</h1>
@@ -50,6 +57,10 @@
       jQuery( "#tagFLAGS" ).click(function() {
         jQuery(".all").hide();
         jQuery(".FLAGS").show();
+      });  
+      jQuery( "#tagQUO" ).click(function() {
+        jQuery(".all").hide();
+        jQuery(".QUOTE").show();
       });  
 </script>
 
