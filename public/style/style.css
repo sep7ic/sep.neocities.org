@@ -299,3 +299,7 @@ span {
 *:not(#header) {
   border-color: white;
 }
+pre {
+  font-family: Ms Gothic;
+  white-space: pre-wrap;
+}
