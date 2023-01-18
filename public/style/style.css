@@ -1,6 +1,6 @@
 @font-face {
   font-family: pixeltype;
-  src: url(MSGothicPixel.ttf);
+  src: url("GnuUnifontFull-Pm9P.ttf");
 }
 
 /*---ROOT & BODY---*/
@@ -19,7 +19,7 @@ body {
   background-size: auto 100%;
     /*background: url(noise.png) gray fixed;
   background-size: 2px;*/
-	font-family: "MS Gothic";
+	font-family: "pixeltype";
   margin: 0;
 
   font-smooth: never;
@@ -89,7 +89,6 @@ p {
   line-height: 1.3em;
 }
 h1, h2, h3, h4, h5 {
-  font-family: monospace;
   color: var(--txt);
 }
 h1 {
@@ -219,7 +218,7 @@ summary::-webkit-details-marker {
     color: var(--txt);
     margin-left: auto;
     margin-right: auto;
-  font-family: scan;
+  font-family: "pixeltype";
 }
 #headimg pre {
   margin: 0;
@@ -306,9 +305,10 @@ span {
   border-color: white;
 }
 pre {
-  font-family: Ms Gothic;
+  font-family: "pixeltype";
   white-space: pre-wrap;
 }
-#headimg {
-  font-family: monospace;
+#headimg pre{
+  font-family: Courier;
+  font-size: 70%;
 }
