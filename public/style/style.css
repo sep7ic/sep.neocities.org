@@ -128,7 +128,9 @@ h1 {
   padding: 0;
   padding: 0.5em 0;
   display: flex;
-  justify-content: space-between;
+  flex-wrap:wrap;
+  flex-flow: row nowrap;
+  justify-content: space-evenly;
 }
 #header li {
   font-size: 1.2em;
