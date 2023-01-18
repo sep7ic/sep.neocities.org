@@ -68,6 +68,10 @@ img {
   font-style: italic;
 }
 
+/*---ANCHOR---*/
+a {
+  color: red;
+}
 a:hover { 
   background-color: var(--txt);
 }
@@ -82,7 +86,7 @@ a:active, a:visited {
 
 /*---TEXT---*/
 p {
-  line-height: 1.6em;
+  line-height: 1.3em;
 }
 h1, h2, h3, h4, h5 {
   font-family: monospace;
@@ -122,9 +126,10 @@ h1 {
 #header ul {
   list-style-type: none;
   margin: 0;
-  
+  padding: 0;
   padding: 0.5em 0;
-  text-align: center;
+  display: flex;
+  justify-content: space-between;
 }
 #header li {
   font-size: 1.2em;
@@ -136,7 +141,8 @@ h1 {
   background-color: var(--bg);
   box-shadow: 0 0.6em var(--bg);
   padding: 5px;
-  width: calc(70% / 6);
+  width: calc(82% / 6);
+  text-align: center;
 
   position: relative;
   top: 0;
