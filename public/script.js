@@ -9,6 +9,7 @@ let headerHTML = '<ul> <li><a href="' + relativePath + '/index.html">home</a></l
 '<li><a href="' + relativePath + '/posts.html">posts</a></li>' +
 '<li><a href="' + relativePath + '/flags.html">flags</a></li>' +
 '<li><a href="' + relativePath + '/art.html">art</a></li>' +
+'<li><a href="' + relativePath + '/music.html">music</a></li>' +
 '<li><a href="' + relativePath + '/wishlist.html">wishlist</a></li>' +
 '<li><a href="' + relativePath + '/shrines.html">shrines</a></li>' +
 '<li><a href="' + relativePath + '/more.html">more</a></li> </ul>';
